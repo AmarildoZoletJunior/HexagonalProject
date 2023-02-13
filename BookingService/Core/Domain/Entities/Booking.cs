@@ -16,6 +16,9 @@ namespace Domain.Entities
             this.Status = Status.Created;
         }
         public int Id { get; set; }
+
+        public Room Room { get; set; }
+        public Guest Guest { get; set; }
         public DateTime PlacedAt { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
