@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using AdaptersSQL.Configuration;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AdaptersSQL
@@ -12,7 +13,8 @@ namespace AdaptersSQL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+            modelBuilder.ApplyConfiguration(new GuestConfiguration());
+            modelBuilder.ApplyConfiguration(new RoomConfiguration());
         }
     }
 }
