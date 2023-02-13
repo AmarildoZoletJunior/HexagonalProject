@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "tvFy/edxUs0KMbTDLD2xOKib5FBsLqqSGZCZmpLsBp48MmDPp71+t6v2pxbBif21C6B93znOeqhznUqC11V3yg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Consumers\\API\\API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Amarildo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Amarildo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Amarildo\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Amarildo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Amarildo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Amarildo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
