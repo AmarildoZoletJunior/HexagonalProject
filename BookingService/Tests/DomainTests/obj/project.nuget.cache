@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZpMgCmAo10ZtcazvcZ+px+aFUCDqMHMr9B3GDCngwmaSy9tENyW8idF7I6r3oJQnPNZzgJM1EZ5wSUNsI8WzDA==",
+  "dgSpecHash": "YeRxHgMMHQDUhVzd1E80dI5FA5Rdo7+A37wx7cxkdm3DHB++lYyQyZyiy6i+KBW5LOOW7NnBXmCGd/b0Mp/qeA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\DomainTests\\DomainTests.csproj",
+  "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\DomainTests\\DomainTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Amarildo\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",

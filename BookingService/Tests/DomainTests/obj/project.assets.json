@@ -1802,6 +1802,16 @@
         "build": {
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
       }
     }
   },
@@ -6098,10 +6108,16 @@
         "xunit.runner.visualstudio.2.4.3.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Core/Domain/Domain.csproj",
+      "msbuildProject": "../../Core/Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Domain >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.1.0",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.1",
@@ -6115,11 +6131,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\DomainTests\\DomainTests.csproj",
+      "projectUniqueName": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\DomainTests\\DomainTests.csproj",
       "projectName": "DomainTests",
-      "projectPath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\DomainTests\\DomainTests.csproj",
+      "projectPath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\DomainTests\\DomainTests.csproj",
       "packagesPath": "C:\\Users\\Amarildo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\DomainTests\\obj\\",
+      "outputPath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\DomainTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6139,7 +6155,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Core\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Core\\Domain\\Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

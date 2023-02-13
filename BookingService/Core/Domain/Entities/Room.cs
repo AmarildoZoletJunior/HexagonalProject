@@ -27,6 +27,7 @@ namespace Domain.Entities
 
         public bool HasGuest
         {
+            //Verificar se existem bookins abertos para esta Room
             get { return true; }
         }
     }

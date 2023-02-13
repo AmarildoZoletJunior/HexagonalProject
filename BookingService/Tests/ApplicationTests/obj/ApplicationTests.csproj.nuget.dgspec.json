@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\ApplicationTests\\ApplicationTests.csproj": {}
+    "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\ApplicationTests\\ApplicationTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\ApplicationTests\\ApplicationTests.csproj": {
+    "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\ApplicationTests\\ApplicationTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\ApplicationTests\\ApplicationTests.csproj",
+        "projectUniqueName": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\ApplicationTests\\ApplicationTests.csproj",
         "projectName": "ApplicationTests",
-        "projectPath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\ApplicationTests\\ApplicationTests.csproj",
+        "projectPath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\ApplicationTests\\ApplicationTests.csproj",
         "packagesPath": "C:\\Users\\Amarildo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\ApplicationTests\\obj\\",
+        "outputPath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\ApplicationTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

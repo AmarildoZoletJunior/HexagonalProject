@@ -1,0 +1,12 @@
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\bin\Debug\net6.0\AdaptersSQL.deps.json
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\bin\Debug\net6.0\AdaptersSQL.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\bin\Debug\net6.0\AdaptersSQL.pdb
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\obj\Debug\net6.0\AdaptersSQL.csproj.AssemblyReference.cache
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\obj\Debug\net6.0\AdaptersSQL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\obj\Debug\net6.0\AdaptersSQL.AssemblyInfoInputs.cache
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\obj\Debug\net6.0\AdaptersSQL.AssemblyInfo.cs
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\obj\Debug\net6.0\AdaptersSQL.csproj.CoreCompileInputs.cache
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\obj\Debug\net6.0\AdaptersSQL.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\obj\Debug\net6.0\refint\AdaptersSQL.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\obj\Debug\net6.0\AdaptersSQL.pdb
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Adapters\AdaptersSQL\obj\Debug\net6.0\ref\AdaptersSQL.dll
