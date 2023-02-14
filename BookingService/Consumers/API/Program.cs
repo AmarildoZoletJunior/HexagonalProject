@@ -1,4 +1,8 @@
 using AdaptersSQL;
+using AdaptersSQL.Guest;
+using Application;
+using Application.Guests.Ports;
+using Domain.Ports;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +14,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Conexao")));
+
+#region IOC
+builder.Services.AddScoped<IGuestManager, GuestManager>();
+builder.Services.AddScoped<IGuestRepository,GuestRepository>();
+
+#endregion
 
 var app = builder.Build();
 

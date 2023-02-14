@@ -84,3 +84,5 @@ C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\A
 C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\API\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\API\bin\Debug\net6.0\Application.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\API\bin\Debug\net6.0\Application.pdb

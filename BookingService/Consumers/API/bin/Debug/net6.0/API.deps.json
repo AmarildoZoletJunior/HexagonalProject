@@ -9,6 +9,7 @@
       "API/1.0.0": {
         "dependencies": {
           "AdaptersSQL": "1.0.0",
+          "Application": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "7.0.2",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
@@ -750,6 +751,14 @@
           "AdaptersSQL.dll": {}
         }
       },
+      "Application/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Application.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "runtime": {
           "Domain.dll": {}
@@ -1275,6 +1284,11 @@
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
     "AdaptersSQL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

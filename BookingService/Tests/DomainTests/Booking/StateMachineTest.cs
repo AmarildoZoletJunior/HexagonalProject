@@ -1,6 +1,7 @@
 
 using Domain.Entities;
-namespace DomainTests.Bookings
+
+namespace DomainTests.Booking
 {
     public class UnitTest1
     {

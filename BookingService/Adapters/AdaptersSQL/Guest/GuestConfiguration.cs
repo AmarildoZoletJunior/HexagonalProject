@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdaptersSQL.Configuration
+namespace AdaptersSQL.Guest
 {
-    public class GuestConfiguration : IEntityTypeConfiguration<Guest>
+    public class GuestConfiguration : IEntityTypeConfiguration<Domain.Entities.Guest>
     {
-        public void Configure(EntityTypeBuilder<Guest> builder)
+        public void Configure(EntityTypeBuilder<Domain.Entities.Guest> builder)
         {
             builder.HasKey(prop => prop.Id);
             builder.Property(prop => prop.Id).IsRequired().ValueGeneratedOnAdd();

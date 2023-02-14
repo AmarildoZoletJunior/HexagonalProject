@@ -1,4 +1,5 @@
-﻿using AdaptersSQL.Configuration;
+﻿using AdaptersSQL.Guest;
+using AdaptersSQL.Room;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,8 +9,8 @@ namespace AdaptersSQL
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<Booking> Bookings { get; set; }
-        public DbSet<Guest> Guests { get; set; }
-        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Domain.Entities.Guest> Guests { get; set; }
+        public DbSet<Domain.Entities.Room> Rooms { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
