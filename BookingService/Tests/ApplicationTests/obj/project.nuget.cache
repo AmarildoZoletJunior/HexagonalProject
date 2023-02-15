@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nhdjLr/IW9N/8KZuZhsUxzhIDeYwt8JWKj36zaNS9xPwBJ3kT4cBVztbXcZsuSlU0DnSyzFL142zQVh97kuQkg==",
+  "dgSpecHash": "dmoRQLwDuwGGWjAH0GLfyYXyQAUbH73RA40In+igAyPH+/ILkJqall0E6Vk4oP81+ai9M0lq6ELoxfE0csJRtQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\ApplicationTests\\ApplicationTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Amarildo\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\Amarildo\\.nuget\\packages\\fluentvalidation\\11.5.0\\fluentvalidation.11.5.0.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\microsoft.net.test.sdk\\17.1.0\\microsoft.net.test.sdk.17.1.0.nupkg.sha512",

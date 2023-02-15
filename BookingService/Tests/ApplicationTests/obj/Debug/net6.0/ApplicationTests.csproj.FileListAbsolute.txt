@@ -97,3 +97,9 @@ C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Tests\Appli
 C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Tests\ApplicationTests\obj\Debug\net6.0\ApplicationTests.pdb
 C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Tests\ApplicationTests\obj\Debug\net6.0\ApplicationTests.genruntimeconfig.cache
 C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Tests\ApplicationTests\obj\Debug\net6.0\ref\ApplicationTests.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Tests\ApplicationTests\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Tests\ApplicationTests\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Tests\ApplicationTests\bin\Debug\net6.0\Application.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Tests\ApplicationTests\bin\Debug\net6.0\Domain.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Tests\ApplicationTests\bin\Debug\net6.0\Application.pdb
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Tests\ApplicationTests\bin\Debug\net6.0\Domain.pdb
