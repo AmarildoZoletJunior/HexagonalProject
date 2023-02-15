@@ -23,9 +23,9 @@ namespace AdaptersSQL.Guest
             return guest.Id;
         }
 
-        public async Task<Domain.Entities.Guest> Get(int Id)
+        public List<Domain.Entities.Guest> Get()
         {
-            return await _dataContext.Guests.FirstOrDefaultAsync(x => x.Id == Id);
+            return _dataContext.Guests.ToList();
         }
     }
 }

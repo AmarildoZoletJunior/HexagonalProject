@@ -1,6 +1,8 @@
-﻿using Domain.Entities;
+﻿using Application.Guests.Validators;
+using Domain.Entities;
 using Domain.Enums;
 using Domain.ValueObjects;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;

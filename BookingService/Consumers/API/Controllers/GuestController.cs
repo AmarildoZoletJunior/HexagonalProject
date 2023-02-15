@@ -2,6 +2,9 @@
 using Application.Guests.DTOs;
 using Application.Guests.Ports;
 using Application.Guests.Requests;
+using Application.Guests.Responses;
+using Application.Guests.Validators;
+using Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,12 +34,20 @@ namespace API.Controllers
             var res = await _ports.CreateGuest(request);
             if (res.Success) return Created("", res.Data);
 
-            if(res.ErrorCode == ErrorCodes.NOT_FOUND)
+            if(res.ErrorCode == ErrorCodes.COULDNOT_STORE_DATA)
             {
-                return BadRequest();
+                _logger.LogError("A response retornou um erro desconhecido");
+                return BadRequest(res);
             }
-            _logger.LogError("A response retornou um erro desconhecido");
             return BadRequest(500);
+        }
+
+        [HttpGet]
+
+        public async Task<IActionResult> Get()
+        {
+            var Guests = await _ports.GetGuests();
+            return Ok(Guests);
         }
     }
 }

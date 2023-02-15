@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KcWu6sQZe8OpLwHZsFbBwelfflOGIG+YiXXj6SOs+TzV6mddUbZ+XQGy/xywtKN3nvhkBeFYndq0SZhhotGK7w==",
+  "dgSpecHash": "X/ENv8XewSx2YwXokq282kS5Q6aor5FaqPsW4c0v1g/bawYkD9q6aVTTyPEN4IsMG8CHB/XuNwONYSFhu5RKrw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Core\\Application\\Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Amarildo\\.nuget\\packages\\fluentvalidation\\11.5.0\\fluentvalidation.11.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

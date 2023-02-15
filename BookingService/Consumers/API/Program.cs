@@ -1,8 +1,12 @@
 using AdaptersSQL;
 using AdaptersSQL.Guest;
 using Application;
+using Application.Guests.DTOs;
 using Application.Guests.Ports;
+using Application.Guests.Validators;
 using Domain.Ports;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddControllers().AddFluentValidation();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -18,6 +23,12 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(build
 #region IOC
 builder.Services.AddScoped<IGuestManager, GuestManager>();
 builder.Services.AddScoped<IGuestRepository,GuestRepository>();
+
+
+#region IOCValidators
+builder.Services.AddTransient<IValidator<GuestDto>, GuestValidator>();
+
+#endregion
 
 #endregion
 

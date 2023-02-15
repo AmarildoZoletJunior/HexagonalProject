@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "/We5zhV6SegtAHTCq1WMNhZS9gQDJt47KtPlODJQd5IJYyhK01F2G3EkPvsY9fxiwFcXlNbC9D6m0eAaCA5Qvg==",
+  "dgSpecHash": "x4rVMrP7OugRNZiNbBwZRF+w54wSBJxpuCGRVk06VZmN65r3r4N1epX+Oc9Jf8qCNm1YOonI0T/eh0DLEZulcw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Consumers\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Amarildo\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\Amarildo\\.nuget\\packages\\fluentvalidation\\11.5.0\\fluentvalidation.11.5.0.nupkg.sha512",
+    "C:\\Users\\Amarildo\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\Amarildo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.0\\fluentvalidation.dependencyinjectionextensions.11.5.0.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

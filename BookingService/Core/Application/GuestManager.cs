@@ -2,6 +2,7 @@
 using Application.Guests.Ports;
 using Application.Guests.Requests;
 using Application.Guests.Responses;
+using Domain.Entities;
 using Domain.Ports;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,11 @@ namespace Application
                     ErrorCode = ErrorCodes.COULDNOT_STORE_DATA
                 };
             }
+        }
+       public async Task<List<Guest>> GetGuests()
+        {
+            var teste =  _guestRepository.Get();
+            return teste;
         }
     }
 }
