@@ -25,21 +25,16 @@ namespace API.Controllers
 
         [HttpPost]
 
-        public async Task<ActionResult<GuestDto>> Post(GuestDto guest)
+        public async Task<ActionResult<GuestDto>> PostTeste(GuestDto guest)
         {
             var request = new CreateGuestRequest
             {
                 Data = guest
             };
             var res = await _ports.CreateGuest(request);
-            if (res.Success) return Created("", res.Data);
+            if (res.Success) return Ok(res.Data);
 
-            if(res.ErrorCode == ErrorCodes.COULDNOT_STORE_DATA)
-            {
-                _logger.LogError("A response retornou um erro desconhecido");
-                return BadRequest(res);
-            }
-            return BadRequest(500);
+            return BadRequest(res);
         }
 
         [HttpGet]

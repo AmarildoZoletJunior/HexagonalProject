@@ -2,6 +2,7 @@
 using Application.Guests.Ports;
 using Application.Guests.Requests;
 using Application.Guests.Responses;
+using Application.Guests.Validators;
 using Domain.Entities;
 using Domain.Ports;
 using System;
@@ -21,25 +22,33 @@ namespace Application
         }
         public async Task<GuestResponse> CreateGuest(CreateGuestRequest guestRequest)
         {
-            try
-            {
-                var guest = GuestDto.MapToEntity(guestRequest.Data);
-                guestRequest.Data.Id = await _guestRepository.Create(guest);
+            var guestDto = guestRequest.Data;
+            var validator = new GuestValidator();
+            var resultado = validator.Validate(guestDto);
+            if (!resultado.IsValid){
+
+                var lista = new List<string>();
+                foreach(var erro in resultado.Errors){
+                    lista.Add(erro.ErrorMessage);
+                }
+
+                return new GuestResponse
+                {
+                    Success = false,
+                    ErrorCode = 400,
+                    Message = lista
+                };
+            }
+
+            var guest = GuestDto.MapToEntity(guestRequest.Data);
+            await guest.SaveAsync(_guestRepository);
+            guestRequest.Data.Id = guest.Id;
+            
                 return new GuestResponse
                 {
                     Data = guestRequest.Data,
                     Success = true
                 };
-            }
-            catch (Exception)
-            {
-                return new GuestResponse
-                {
-                    Success = false,
-                    Message = "Erro em salvar dados no banco",
-                    ErrorCode = ErrorCodes.COULDNOT_STORE_DATA
-                };
-            }
         }
        public async Task<List<Guest>> GetGuests()
         {
