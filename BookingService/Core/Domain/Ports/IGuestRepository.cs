@@ -9,7 +9,7 @@ namespace Domain.Ports
 {
     public interface IGuestRepository
     {
-        List<Guest> Get();
+        Task<Domain.Entities.Guest> GetGuest(int id);
         Task<int> Create(Guest guest);
 
     }

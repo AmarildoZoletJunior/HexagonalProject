@@ -17,7 +17,7 @@ namespace Application.Guests.Validators
             RuleFor(x => x.Surname).NotEmpty().NotNull().MinimumLength(3);
             RuleFor(x => x.Email).EmailAddress().NotEmpty().NotNull();
             RuleFor(x => x.IdTypeCode).Custom((list, context) => {
-                if (list > 1 | list < 0 )
+                if (list > 2 | list < 1 )
                 {
                     context.AddFailure("Você só pode escolher entre 0(Passaport) ou 1(CNH)");
                 }

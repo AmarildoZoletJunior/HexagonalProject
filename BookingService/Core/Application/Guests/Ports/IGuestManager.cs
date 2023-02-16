@@ -12,6 +12,6 @@ namespace Application.Guests.Ports
     public interface IGuestManager
     {
         Task<GuestResponse> CreateGuest(CreateGuestRequest guest);
-        Task<List<Guest>> GetGuests();
+        public Task<GuestResponse> GetGuest(int id);
     }
 }

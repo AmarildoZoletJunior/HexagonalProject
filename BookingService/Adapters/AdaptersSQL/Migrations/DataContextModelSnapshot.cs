@@ -149,7 +149,7 @@ namespace AdaptersSQL.Migrations
 
             modelBuilder.Entity("Domain.Entities.Room", b =>
                 {
-                    b.OwnsOne("Domain.ValueObjects.Price", "Price", b1 =>
+                    b.OwnsOne("Domain.ValueObjects.Price", "PriceRoom", b1 =>
                         {
                             b1.Property<int>("RoomId")
                                 .HasColumnType("int");
@@ -168,7 +168,7 @@ namespace AdaptersSQL.Migrations
                                 .HasForeignKey("RoomId");
                         });
 
-                    b.Navigation("Price")
+                    b.Navigation("PriceRoom")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

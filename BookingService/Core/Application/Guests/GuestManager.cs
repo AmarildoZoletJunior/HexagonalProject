@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application
+namespace Application.Guests
 {
     public class GuestManager : IGuestManager
     {
@@ -37,16 +37,15 @@ namespace Application
                 {
                     lista.Add(new ErrorResponse
                     {
-                         ErrorMessages = erro.ErrorMessage,
-                          ErrorType = erro.PropertyName
+                        ErrorMessages = erro.ErrorMessage,
+                        ErrorType = erro.PropertyName
                     });
                 }
 
                 return new GuestResponse
                 {
                     Success = false,
-                    ErrorCode = 400,
-                    Message = lista
+                    ListMessages = lista
                 };
             }
 
@@ -60,10 +59,25 @@ namespace Application
                 Success = true
             };
         }
-        public async Task<List<Guest>> GetGuests()
+
+        public async Task<GuestResponse> GetGuest(int id)
         {
-            var teste = _guestRepository.Get();
-            return teste;
+            var getGuest = await _guestRepository.GetGuest(id);
+            if (getGuest != null)
+            {
+                return new GuestResponse
+                {
+                    Data = GuestDto.MapToDTO(getGuest),
+                    Success = true
+                };
+            }
+            return new GuestResponse
+            {
+                Success = false,
+                Message = "Não foi possivel encontrar este guest"
+            };
         }
+
+
     }
 }

@@ -1,6 +1,5 @@
 using AdaptersSQL.Guest;
 using API.Controllers;
-using Application;
 using Application.Guests.DTOs;
 using Application.Guests.Ports;
 using Application.Guests.Requests;
@@ -16,7 +15,7 @@ namespace ApplicationTests.GuestManagerTest
 
     public class GuestManager
     {
-        Application.GuestManager manager;
+        Application.Guests.GuestManager manager;
 
         [Fact]
         public async Task AdicionarGuestCorreto()
@@ -24,7 +23,7 @@ namespace ApplicationTests.GuestManagerTest
             var fakerepo = new Mock<IGuestRepository>();
             fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
 
-            manager = new Application.GuestManager(fakerepo.Object);
+            manager = new Application.Guests.GuestManager(fakerepo.Object);
 
             var guestDTO = new GuestDto
             {
@@ -52,7 +51,7 @@ namespace ApplicationTests.GuestManagerTest
             var fakerepo = new Mock<IGuestRepository>();
             fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
 
-            manager = new Application.GuestManager(fakerepo.Object);
+            manager = new Application.Guests.GuestManager(fakerepo.Object);
 
             var guestDTO = new GuestDto
             {
@@ -71,7 +70,7 @@ namespace ApplicationTests.GuestManagerTest
             var response = await manager.CreateGuest(guest);
 
             Assert.False(response.Success);
-            Assert.Contains("Email", response.Message.Select(x => x.ErrorType));
+            Assert.Contains("Email", response.ListMessages.Select(x => x.ErrorType));
         }
 
         [Fact]
@@ -80,7 +79,7 @@ namespace ApplicationTests.GuestManagerTest
             var fakerepo = new Mock<IGuestRepository>();
             fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
 
-            manager = new Application.GuestManager(fakerepo.Object);
+            manager = new Application.Guests.GuestManager(fakerepo.Object);
 
             var guestDTO = new GuestDto
             {
@@ -99,7 +98,7 @@ namespace ApplicationTests.GuestManagerTest
             var response = await manager.CreateGuest(guest);
 
             Assert.False(response.Success);
-            Assert.Contains("IdNumber", response.Message.Select(x => x.ErrorType));
+            Assert.Contains("IdNumber", response.ListMessages.Select(x => x.ErrorType));
         }
 
         [Fact]
@@ -108,7 +107,7 @@ namespace ApplicationTests.GuestManagerTest
             var fakerepo = new Mock<IGuestRepository>();
             fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
 
-            manager = new Application.GuestManager(fakerepo.Object);
+            manager = new Application.Guests.GuestManager(fakerepo.Object);
 
             var guestDTO = new GuestDto
             {
@@ -127,7 +126,7 @@ namespace ApplicationTests.GuestManagerTest
             var response = await manager.CreateGuest(guest);
 
             Assert.False(response.Success);
-            Assert.Contains("IdTypeCode", response.Message.Select(x => x.ErrorType));
+            Assert.Contains("IdTypeCode", response.ListMessages.Select(x => x.ErrorType));
         }
 
         [Fact]
@@ -136,7 +135,7 @@ namespace ApplicationTests.GuestManagerTest
             var fakerepo = new Mock<IGuestRepository>();
             fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
 
-            manager = new Application.GuestManager(fakerepo.Object);
+            manager = new Application.Guests.GuestManager(fakerepo.Object);
 
             var guestDTO = new GuestDto
             {
@@ -155,7 +154,7 @@ namespace ApplicationTests.GuestManagerTest
             var response = await manager.CreateGuest(guest);
 
             Assert.False(response.Success);
-            Assert.Contains("Name",response.Message.Select(x => x.ErrorType));
+            Assert.Contains("Name",response.ListMessages.Select(x => x.ErrorType));
         }
 
         [Fact]
@@ -164,7 +163,7 @@ namespace ApplicationTests.GuestManagerTest
             var fakerepo = new Mock<IGuestRepository>();
             fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
 
-            manager = new Application.GuestManager(fakerepo.Object);
+            manager = new Application.Guests.GuestManager(fakerepo.Object);
 
             var guestDTO = new GuestDto
             {
@@ -183,7 +182,7 @@ namespace ApplicationTests.GuestManagerTest
             var response = await manager.CreateGuest(guest);
 
             Assert.False(response.Success);
-            Assert.Contains("Surname", response.Message.Select(x => x.ErrorType));
+            Assert.Contains("Surname", response.ListMessages.Select(x => x.ErrorType));
         }
 
         [Fact]
@@ -192,7 +191,7 @@ namespace ApplicationTests.GuestManagerTest
             var fakerepo = new Mock<IGuestRepository>();
             fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
 
-            manager = new Application.GuestManager(fakerepo.Object);
+            manager = new Application.Guests.GuestManager(fakerepo.Object);
 
             var guestDTO = new GuestDto
             {
@@ -211,7 +210,7 @@ namespace ApplicationTests.GuestManagerTest
             var response = await manager.CreateGuest(guest);
 
             Assert.False(response.Success);
-            Assert.Collection(response.Message.Select(x => x.ErrorType),
+            Assert.Collection(response.ListMessages.Select(x => x.ErrorType),
                 item => item.Contains("Name"),
                 item => item.Contains("IdNumber"),
                 item => item.Contains("IdTypeCode"),

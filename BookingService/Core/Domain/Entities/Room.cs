@@ -1,4 +1,5 @@
-﻿using Domain.ValueObjects;
+﻿using Domain.Ports;
+using Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public int Level { get; set; }
-        public Price Price { get; set; }
+        public Price PriceRoom { get; set; }
         public bool InMaintenance { get; set; }
 
         public bool IsAvailable {
@@ -31,6 +32,11 @@ namespace Domain.Entities
         {
             //Verificar se existem bookins abertos para esta Room
             get { return true; }
+        }
+
+        public async Task SaveAsync(IRoomRepository repository)
+        {
+            this.Id = await repository.Create(this);
         }
     }
 }

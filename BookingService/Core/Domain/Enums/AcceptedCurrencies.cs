@@ -8,9 +8,9 @@ namespace Domain.Enums
 {
     public enum AcceptedCurrencies
     {
-        Dolar = 0,
-        Euro = 1,
-        Real = 2,
-        PesoArgentino = 3
+        Dolar = 1,
+        Euro = 2,
+        Real = 3,
+        PesoArgentino = 4
     }
 }

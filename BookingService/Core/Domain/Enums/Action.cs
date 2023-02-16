@@ -8,10 +8,10 @@ namespace Domain.Enums
 {
     public enum Action
     {
-        Pay = 0,
-        Finish = 1,  //Depois de pagar e usar
-        Cancel = 2, //Apenas do criado para cancelado
-        Refund = 3, // Apenas somente se vier de pago
-        Reopen = 4 // Cancelado
+        Pay = 1,
+        Finish = 2,  //Depois de pagar e usar
+        Cancel = 3, //Apenas do criado para cancelado
+        Refund = 4, // Apenas somente se vier de pago
+        Reopen = 5 // Cancelado
     }
 }

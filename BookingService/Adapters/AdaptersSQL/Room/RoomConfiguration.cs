@@ -15,8 +15,8 @@ namespace AdaptersSQL.Room
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.OwnsOne(x => x.Price).Property(x => x.Currency);
-            builder.OwnsOne(x => x.Price).Property(x => x.Value);
+            builder.OwnsOne(x => x.PriceRoom).Property(x => x.Currency);
+            builder.OwnsOne(x => x.PriceRoom).Property(x => x.Value);
         }
     }
 }

@@ -7,6 +7,7 @@ using Application.Guests.Validators;
 using Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace API.Controllers
 {
@@ -34,15 +35,17 @@ namespace API.Controllers
             var res = await _ports.CreateGuest(request);
             if (res.Success) return Ok(res.Data);
 
-            return BadRequest(res);
+            return BadRequest(res.ListMessages);
         }
 
-        [HttpGet]
+        [HttpGet("{id:int}")]
 
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetGuest([Required]int id)
         {
-            var Guests = await _ports.GetGuests();
-            return Ok(Guests);
+            var guest = await _ports.GetGuest(id);
+            if (guest.Success) return Ok(guest.Data);
+
+            return BadRequest(guest.Message);
         }
     }
 }

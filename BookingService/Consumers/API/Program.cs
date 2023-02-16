@@ -1,9 +1,14 @@
 using AdaptersSQL;
 using AdaptersSQL.Guest;
-using Application;
+using AdaptersSQL.Room;
+using Application.Guests;
 using Application.Guests.DTOs;
 using Application.Guests.Ports;
 using Application.Guests.Validators;
+using Application.Room;
+using Application.Room.DTOs;
+using Application.Room.Ports;
+using Application.Room.Validators;
 using Domain.Ports;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -22,11 +27,13 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(build
 #region IOC
 builder.Services.AddScoped<IGuestManager, GuestManager>();
 builder.Services.AddScoped<IGuestRepository,GuestRepository>();
+builder.Services.AddScoped<IRoomManager, RoomManager>();
+builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 
 
 #region IOCValidators
 builder.Services.AddTransient<IValidator<GuestDto>, GuestValidator>();
-
+builder.Services.AddTransient<IValidator<RoomDto>, RoomValidators>();
 #endregion
 
 #endregion

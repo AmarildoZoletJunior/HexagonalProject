@@ -8,7 +8,7 @@ namespace Application.Errors
 {
     public class ErrorResponse
     {
-        public string ErrorMessages { get; set; }
         public string ErrorType { get; set; }
+        public string ErrorMessages { get; set; }
     }
 }
