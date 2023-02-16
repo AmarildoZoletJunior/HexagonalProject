@@ -14,36 +14,24 @@ using Moq;
 namespace ApplicationTests.GuestManagerTest
 {
 
-
-    class Fake : IGuestRepository
-    {
-        public Task<int> Create(Guest guest)
-        {
-            return Task.FromResult(111);
-        }
-
-        public List<Guest> Get()
-        {
-            throw new NotImplementedException();
-        }
-    }
     public class GuestManager
     {
-
-        Application.GuestManager managerteste;
+        Application.GuestManager manager;
 
         [Fact]
-        public async Task TesteAdd()
+        public async Task AdicionarGuestCorreto()
         {
-            var fake = new Fake();
-            managerteste = new Application.GuestManager(fake);
+            var fakerepo = new Mock<IGuestRepository>();
+            fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
+
+            manager = new Application.GuestManager(fakerepo.Object);
 
             var guestDTO = new GuestDto
             {
                 Email = "amarildozj@gmail.com",
                 IdNumber = "124.123.451-21",
                 IdTypeCode = 1,
-                Name = "Am",
+                Name = "Amarildo",
                 Surname = "Teste"
             };
 
@@ -52,10 +40,183 @@ namespace ApplicationTests.GuestManagerTest
                 Data = guestDTO
              };
 
-            var response = await managerteste.CreateGuest(guest);
-
+            var response = await manager.CreateGuest(guest);
                 
             Assert.True(response.Success);
+        }
+
+
+        [Fact]
+        public async Task AdicionarGuestEmailIncorreto()
+        {
+            var fakerepo = new Mock<IGuestRepository>();
+            fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
+
+            manager = new Application.GuestManager(fakerepo.Object);
+
+            var guestDTO = new GuestDto
+            {
+                Email = "amarildozj",
+                IdNumber = "124.123.451-21",
+                IdTypeCode = 1,
+                Name = "Amarildo",
+                Surname = "Teste"
+            };
+
+            var guest = new CreateGuestRequest
+            {
+                Data = guestDTO
+            };
+
+            var response = await manager.CreateGuest(guest);
+
+            Assert.False(response.Success);
+            Assert.Contains("Email", response.Message.Select(x => x.ErrorType));
+        }
+
+        [Fact]
+        public async Task AdicionarGuestIdNumberIncorreto()
+        {
+            var fakerepo = new Mock<IGuestRepository>();
+            fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
+
+            manager = new Application.GuestManager(fakerepo.Object);
+
+            var guestDTO = new GuestDto
+            {
+                Email = "amarildozj@gmail.com",
+                IdNumber = "124123.451",
+                IdTypeCode = 1,
+                Name = "Amarildo",
+                Surname = "Teste"
+            };
+
+            var guest = new CreateGuestRequest
+            {
+                Data = guestDTO
+            };
+
+            var response = await manager.CreateGuest(guest);
+
+            Assert.False(response.Success);
+            Assert.Contains("IdNumber", response.Message.Select(x => x.ErrorType));
+        }
+
+        [Fact]
+        public async Task AdicionarGuestIdTypeCodeIncorreto()
+        {
+            var fakerepo = new Mock<IGuestRepository>();
+            fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
+
+            manager = new Application.GuestManager(fakerepo.Object);
+
+            var guestDTO = new GuestDto
+            {
+                Email = "amarildozj@gmail.com",
+                IdNumber = "124.123.451-12",
+                IdTypeCode = 5,
+                Name = "Amarildo",
+                Surname = "Teste"
+            };
+
+            var guest = new CreateGuestRequest
+            {
+                Data = guestDTO
+            };
+
+            var response = await manager.CreateGuest(guest);
+
+            Assert.False(response.Success);
+            Assert.Contains("IdTypeCode", response.Message.Select(x => x.ErrorType));
+        }
+
+        [Fact]
+        public async Task AdicionarGuestNameIncorreto()
+        {
+            var fakerepo = new Mock<IGuestRepository>();
+            fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
+
+            manager = new Application.GuestManager(fakerepo.Object);
+
+            var guestDTO = new GuestDto
+            {
+                Email = "amarildozj@gmail.com",
+                IdNumber = "124.123.451-12",
+                IdTypeCode = 1,
+                Name = "Am",
+                Surname = "Teste"
+            };
+
+            var guest = new CreateGuestRequest
+            {
+                Data = guestDTO
+            };
+
+            var response = await manager.CreateGuest(guest);
+
+            Assert.False(response.Success);
+            Assert.Contains("Name",response.Message.Select(x => x.ErrorType));
+        }
+
+        [Fact]
+        public async Task AdicionarGuestSurnameIncorreto()
+        {
+            var fakerepo = new Mock<IGuestRepository>();
+            fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
+
+            manager = new Application.GuestManager(fakerepo.Object);
+
+            var guestDTO = new GuestDto
+            {
+                Email = "amarildozj@gmail.com",
+                IdNumber = "124.123.451-12",
+                IdTypeCode = 1,
+                Name = "Amarildo",
+                Surname = "te"
+            };
+
+            var guest = new CreateGuestRequest
+            {
+                Data = guestDTO
+            };
+
+            var response = await manager.CreateGuest(guest);
+
+            Assert.False(response.Success);
+            Assert.Contains("Surname", response.Message.Select(x => x.ErrorType));
+        }
+
+        [Fact]
+        public async Task AdicionarGuestTudoIncorreto()
+        {
+            var fakerepo = new Mock<IGuestRepository>();
+            fakerepo.Setup(x => x.Create(It.IsAny<Guest>())).Returns(Task.FromResult(111));
+
+            manager = new Application.GuestManager(fakerepo.Object);
+
+            var guestDTO = new GuestDto
+            {
+                Email = "amarildoz",
+                IdNumber = "124.",
+                IdTypeCode = -5 ,
+                Name = "Am",
+                Surname = "te"
+            };
+
+            var guest = new CreateGuestRequest
+            {
+                Data = guestDTO
+            };
+
+            var response = await manager.CreateGuest(guest);
+
+            Assert.False(response.Success);
+            Assert.Collection(response.Message.Select(x => x.ErrorType),
+                item => item.Contains("Name"),
+                item => item.Contains("IdNumber"),
+                item => item.Contains("IdTypeCode"),
+                item => item.Contains("Surname"),
+                item => item.Contains("Email"));
         }
     }
 }
