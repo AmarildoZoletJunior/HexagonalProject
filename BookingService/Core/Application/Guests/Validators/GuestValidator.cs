@@ -13,16 +13,16 @@ namespace Application.Guests.Validators
     {
         public GuestValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().NotNull().MinimumLength(3);
-            RuleFor(x => x.Surname).NotEmpty().NotNull().MinimumLength(3);
-            RuleFor(x => x.Email).EmailAddress().NotEmpty().NotNull();
+            RuleFor(x => x.Name).NotEmpty().WithMessage("O campo Name não pode estar vazio").NotNull().WithMessage("O campo Name não pode estar nulo").MinimumLength(3).WithMessage("O campo Name deve conter no minimo 3 caracteres");
+            RuleFor(x => x.Surname).NotEmpty().WithMessage("O campo Surname não pode estar vazio").NotNull().WithMessage("O campo Surname não pode estar nulo").MinimumLength(3).WithMessage("O campo Surname deve conter no minimo 3 caracteres");
+            RuleFor(x => x.Email).EmailAddress().WithMessage("O campo Email esta incorreto").NotEmpty().WithMessage("O campo Email não pode estar vazio").NotNull().WithMessage("O campo Email não pode estar nulo");
             RuleFor(x => x.IdTypeCode).Custom((list, context) => {
                 if (list > 2 | list < 1 )
                 {
-                    context.AddFailure("Você só pode escolher entre 0(Passaport) ou 1(CNH)");
+                    context.AddFailure("Você só pode escolher entre 1(Passaport) ou 2(CNH)");
                 }
-            }).NotNull().NotEmpty();
-            RuleFor(x => x.IdNumber).Matches("^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$").WithMessage("Cpf invalido").NotNull().WithMessage("Cpf invalido").NotEmpty().WithMessage("Cpf invalido");
+            }).NotNull().WithMessage("O campo IdTypeCode não pode estar nulo").NotEmpty().WithMessage("O campo IdTypeCode não pode estar vazio");
+            RuleFor(x => x.IdNumber).Matches("^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$").WithMessage("Cpf invalido").NotNull().WithMessage("O campo CPF campo não pode estar nulo").NotEmpty().WithMessage("O campo CPF não pode estar vazio");  
         }
     }
 }
