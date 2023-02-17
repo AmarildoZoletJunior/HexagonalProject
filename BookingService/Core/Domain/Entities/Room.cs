@@ -16,6 +16,7 @@ namespace Domain.Entities
         public int Level { get; set; }
         public Price PriceRoom { get; set; }
         public bool InMaintenance { get; set; }
+        public ICollection<Booking> Bookings { get; set; }
 
         public bool IsAvailable {
             get
@@ -30,8 +31,17 @@ namespace Domain.Entities
 
         public bool HasGuest
         {
-            //Verificar se existem bookins abertos para esta Room
-            get { return true; }
+            get
+            {
+                var NotAvailableStatus = new List<Enums.Status>()
+                {
+                    Enums.Status.Paid,
+                    Enums.Status.Created
+                };
+
+                return this.Bookings.Where(
+                    x => x.Room.Id == this.Id && NotAvailableStatus.Contains(x.CurrentStatus)).Count() > 0;
+            }
         }
 
         public async Task SaveAsync(IRoomRepository repository)

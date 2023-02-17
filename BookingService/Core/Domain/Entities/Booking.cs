@@ -15,6 +15,7 @@ namespace Domain.Entities
         public Booking()
         {
             this.Status = Status.Created;
+            this.PlacedAt = DateTime.UtcNow;
         }
         public int Id { get; set; }
 
@@ -45,6 +46,24 @@ namespace Domain.Entities
         public async Task SaveAsync(IBookingRepository repository)
         {
             this.Id = await repository.Create(this);
+            
+        }
+
+        public async Task<bool> ValidateGuest(IGuestRepository repository)
+        {
+            this.Guest = await repository.GetGuest(this.Guest.Id);    
+            if (this.Guest != null) return true;
+            return false;
+        }
+        public async Task<string> ValidateRoom(IRoomRepository repository)
+        {
+            this.Room = await repository.GetRoom(this.Room.Id);
+
+            if (this.Room == null) return "Este Room não existe";
+
+            if (!this.Room.IsAvailable) return "Este Room ja esta sendo negociado";
+ 
+            return "";
         }
     }
 }

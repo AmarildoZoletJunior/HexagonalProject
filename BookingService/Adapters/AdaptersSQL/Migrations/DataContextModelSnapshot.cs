@@ -111,7 +111,7 @@ namespace AdaptersSQL.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Room", "Room")
-                        .WithMany()
+                        .WithMany("Bookings")
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -170,6 +170,11 @@ namespace AdaptersSQL.Migrations
 
                     b.Navigation("PriceRoom")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Entities.Room", b =>
+                {
+                    b.Navigation("Bookings");
                 });
 #pragma warning restore 612, 618
         }

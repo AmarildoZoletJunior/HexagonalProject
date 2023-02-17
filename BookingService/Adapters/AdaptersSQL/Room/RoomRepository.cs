@@ -23,9 +23,9 @@ namespace AdaptersSQL.Room
             return room.Id;
         }
 
-        public async Task<Domain.Entities.Room> Get(int id)
+        public async Task<Domain.Entities.Room> GetRoom(int id)
         {
-            return await _dataContext.Rooms.FirstOrDefaultAsync(x => x.Id == id);
+            return await _dataContext.Rooms.Include(x => x.Bookings).FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

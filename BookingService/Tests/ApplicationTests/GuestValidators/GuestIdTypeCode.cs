@@ -23,11 +23,11 @@ namespace ApplicationTests.GuestValidators
 
             var guestTest0 = new GuestDto
             {
-                IdTypeCode = 0
+                IdTypeCode = 2
             };
             var valid0 = new GuestValidator();
             var result0 = valid0.TestValidate(guestTest0);
-            result1.ShouldNotHaveValidationErrorFor(x => x.IdTypeCode);
+            result0.ShouldNotHaveValidationErrorFor(x => x.IdTypeCode);
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace ApplicationTests.GuestValidators
         {
             var guestTest2 = new GuestDto
             {
-                IdTypeCode = 2
+                IdTypeCode = 0
             };
             var valid2 = new GuestValidator();
             var result2 = valid2.TestValidate(guestTest2);
@@ -43,7 +43,7 @@ namespace ApplicationTests.GuestValidators
 
             var guestTest = new GuestDto
             {
-                IdTypeCode = -1
+                IdTypeCode = 3
             };
             var valid = new GuestValidator();
             var result = valid.TestValidate(guestTest);

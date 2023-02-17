@@ -1,6 +1,11 @@
 using AdaptersSQL;
+using AdaptersSQL.Booking;
 using AdaptersSQL.Guest;
 using AdaptersSQL.Room;
+using Application.Booking;
+using Application.Booking.DTOs;
+using Application.Booking.Ports;
+using Application.Booking.Validators;
 using Application.Guests;
 using Application.Guests.DTOs;
 using Application.Guests.Ports;
@@ -27,13 +32,17 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(build
 #region IOC
 builder.Services.AddScoped<IGuestManager, GuestManager>();
 builder.Services.AddScoped<IGuestRepository,GuestRepository>();
+
 builder.Services.AddScoped<IRoomManager, RoomManager>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 
+builder.Services.AddScoped<IBookingManager, BookingManager>();
+builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 
 #region IOCValidators
 builder.Services.AddTransient<IValidator<GuestDto>, GuestValidator>();
-builder.Services.AddTransient<IValidator<RoomDto>, RoomValidators>();
+builder.Services.AddTransient<IValidator<RoomDto>, RoomValidator>();
+builder.Services.AddTransient<IValidator<BookingDto>, BookingValidator>();
 #endregion
 
 #endregion

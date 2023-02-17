@@ -1,5 +1,8 @@
 ﻿using Application.Booking.DTOs;
 using Application.Booking.Ports;
+using Application.Booking.Request;
+using Application.Guests.Requests;
+using Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,8 +20,14 @@ namespace API.Controllers
         [HttpPost]
         public async Task<ActionResult<BookingDto>> Post(BookingDto booking)
         {
-            await _bookingManager.CreateBooking(booking);
+            var request = new CreateBookingRequest
+            {
+                Data = booking
+            };
+            var response = await _bookingManager.CreateBooking(request);
+            if (response.Success) { return response.Data; };
 
+            return BadRequest(response.ListMessages);
         }
     }
 }

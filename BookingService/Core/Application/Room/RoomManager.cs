@@ -27,7 +27,7 @@ namespace Application.Room
         public async Task<RoomResponse> CreateRoom(CreateRoomRequest room)
         {
             var roomDto = room.Data;
-            var validator = new RoomValidators();
+            var validator = new RoomValidator();
             var resultado = validator.Validate(roomDto);
 
             if (!resultado.IsValid)
@@ -63,7 +63,7 @@ namespace Application.Room
 
         public async Task<RoomResponse> GetRoom(int id)
         {
-            var getRoom = await _roomRepository.Get(id);
+            var getRoom = await _roomRepository.GetRoom(id);
             if (getRoom != null)
             {
                 return new RoomResponse

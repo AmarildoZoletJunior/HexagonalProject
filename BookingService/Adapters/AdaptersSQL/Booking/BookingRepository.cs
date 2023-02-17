@@ -20,7 +20,6 @@ namespace AdaptersSQL.Booking
             _dataContext.Bookings.Add(booking);
             await _dataContext.SaveChangesAsync();
             return booking.Id;
-
         }
 
         public async Task<Domain.Entities.Booking> GetBooking(int id)

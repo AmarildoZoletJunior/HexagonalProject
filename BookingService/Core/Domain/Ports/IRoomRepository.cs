@@ -9,7 +9,7 @@ namespace Domain.Ports
 {
     public interface IRoomRepository
     {
-        Task<Domain.Entities.Room> Get(int id);
+        Task<Domain.Entities.Room> GetRoom(int id);
         Task<int> Create(Room room);
     }
 }
