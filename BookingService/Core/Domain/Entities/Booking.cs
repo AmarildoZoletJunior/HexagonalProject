@@ -1,4 +1,5 @@
 ﻿using Domain.Enums;
+using Domain.Ports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,11 @@ namespace Domain.Entities
                 (Status.Canceled, Action.Reopen) => Status.Created,
                 _ => this.Status
             };
+        }
+
+        public async Task SaveAsync(IBookingRepository repository)
+        {
+            this.Id = await repository.Create(this);
         }
     }
 }

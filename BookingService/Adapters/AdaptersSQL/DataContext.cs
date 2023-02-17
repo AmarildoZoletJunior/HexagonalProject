@@ -8,7 +8,7 @@ namespace AdaptersSQL
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
-        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Domain.Entities.Booking> Bookings { get; set; }
         public DbSet<Domain.Entities.Guest> Guests { get; set; }
         public DbSet<Domain.Entities.Room> Rooms { get; set; }
 
