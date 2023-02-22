@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Moq;
 
-namespace ApplicationTests.GuestManagerTest
+namespace ApplicationTests.GuestTests.GuestManagerTest
 {
 
     public class GuestManager
@@ -37,10 +37,10 @@ namespace ApplicationTests.GuestManagerTest
             var guest = new CreateGuestRequest
             {
                 Data = guestDTO
-             };
+            };
 
             var response = await manager.CreateGuest(guest);
-                
+
             Assert.True(response.Success);
         }
 
@@ -154,7 +154,7 @@ namespace ApplicationTests.GuestManagerTest
             var response = await manager.CreateGuest(guest);
 
             Assert.False(response.Success);
-            Assert.Contains("Name",response.ListMessages.Select(x => x.ErrorType));
+            Assert.Contains("Name", response.ListMessages.Select(x => x.ErrorType));
         }
 
         [Fact]
@@ -197,7 +197,7 @@ namespace ApplicationTests.GuestManagerTest
             {
                 Email = "amarildoz",
                 IdNumber = "124.",
-                IdTypeCode = -5 ,
+                IdTypeCode = -5,
                 Name = "Am",
                 Surname = "te"
             };

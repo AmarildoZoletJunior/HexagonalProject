@@ -17,17 +17,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A2EB439C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaptersSQL", "BookingService\Adapters\AdaptersSQL\AdaptersSQL.csproj", "{A6C870A5-F966-439D-AB91-0C77ACD8E37A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "BookingService\Consumers\API\API.csproj", "{16DB5B1E-0C1F-4EBF-B8B0-AADD41149335}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "BookingService\Consumers\API\API.csproj", "{16DB5B1E-0C1F-4EBF-B8B0-AADD41149335}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "BookingService\Core\Domain\Domain.csproj", "{68712D41-F8B6-4998-8F8C-ED24FF33B3D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "BookingService\Core\Domain\Domain.csproj", "{68712D41-F8B6-4998-8F8C-ED24FF33B3D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "BookingService\Core\Application\Application.csproj", "{4FCB33D9-913B-4FD3-81BF-82E7261D2DD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "BookingService\Core\Application\Application.csproj", "{4FCB33D9-913B-4FD3-81BF-82E7261D2DD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterTests", "BookingService\Tests\AdapterTests\AdapterTests.csproj", "{BF7FD679-96C5-498F-A406-0FB2E5CFEB4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdapterTests", "BookingService\Tests\AdapterTests\AdapterTests.csproj", "{BF7FD679-96C5-498F-A406-0FB2E5CFEB4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationTests", "BookingService\Tests\ApplicationTests\ApplicationTests.csproj", "{70A019FB-9E4A-4BC5-8912-E6DDD49BE92C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationTests", "BookingService\Tests\ApplicationTests\ApplicationTests.csproj", "{70A019FB-9E4A-4BC5-8912-E6DDD49BE92C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainTests", "BookingService\Tests\DomainTests\DomainTests.csproj", "{E663E86E-0AB4-4A86-AA66-C4463BFB448D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainTests", "BookingService\Tests\DomainTests\DomainTests.csproj", "{E663E86E-0AB4-4A86-AA66-C4463BFB448D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{12232E29-3273-4014-942F-75A47C15B195}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{364DFE68-2B90-4707-B3A7-499F597E04A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Application", "PaymentServices\Core\Payments.Application\Payments.Application.csproj", "{2F7157F7-F635-4E19-B240-5F15FF2CCCD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,10 @@ Global
 		{E663E86E-0AB4-4A86-AA66-C4463BFB448D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E663E86E-0AB4-4A86-AA66-C4463BFB448D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E663E86E-0AB4-4A86-AA66-C4463BFB448D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F7157F7-F635-4E19-B240-5F15FF2CCCD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F7157F7-F635-4E19-B240-5F15FF2CCCD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F7157F7-F635-4E19-B240-5F15FF2CCCD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F7157F7-F635-4E19-B240-5F15FF2CCCD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +89,9 @@ Global
 		{BF7FD679-96C5-498F-A406-0FB2E5CFEB4C} = {A2EB439C-E09D-4D18-8C33-DACF177AF4F7}
 		{70A019FB-9E4A-4BC5-8912-E6DDD49BE92C} = {A2EB439C-E09D-4D18-8C33-DACF177AF4F7}
 		{E663E86E-0AB4-4A86-AA66-C4463BFB448D} = {A2EB439C-E09D-4D18-8C33-DACF177AF4F7}
+		{12232E29-3273-4014-942F-75A47C15B195} = {394AF65C-58DA-4B83-9D3A-D55DE1EC6E1E}
+		{364DFE68-2B90-4707-B3A7-499F597E04A1} = {12232E29-3273-4014-942F-75A47C15B195}
+		{2F7157F7-F635-4E19-B240-5F15FF2CCCD8} = {364DFE68-2B90-4707-B3A7-499F597E04A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0C98636D-644E-4437-8A61-857ADC2A1C32}

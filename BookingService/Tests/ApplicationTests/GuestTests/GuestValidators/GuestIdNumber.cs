@@ -4,12 +4,12 @@ using FluentValidation.TestHelper;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace ApplicationTests.GuestValidators
+namespace ApplicationTests.GuestTests.GuestValidators
 {
     public class GuestIdNumber
     {
 
-     
+
         //IdNumber
         [Fact]
         public void ValidarIDNumberCorreto()
