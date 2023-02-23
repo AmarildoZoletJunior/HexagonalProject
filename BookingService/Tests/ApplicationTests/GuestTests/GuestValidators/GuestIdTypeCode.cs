@@ -10,40 +10,28 @@ namespace ApplicationTests.GuestTests.GuestValidators
     {
         //IDTypeCode
 
-        [Fact]
-        public void ValidarIdTypeCodeCorreto()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void ValidarIdTypeCodeCorreto(int type)
         {
-            var guestTest1 = new GuestDto
-            {
-                IdTypeCode = 1
-            };
-            var valid1 = new GuestValidator();
-            var result1 = valid1.TestValidate(guestTest1);
-            result1.ShouldNotHaveValidationErrorFor(x => x.IdTypeCode);
-
-            var guestTest0 = new GuestDto
-            {
-                IdTypeCode = 2
-            };
-            var valid0 = new GuestValidator();
-            var result0 = valid0.TestValidate(guestTest0);
-            result0.ShouldNotHaveValidationErrorFor(x => x.IdTypeCode);
-        }
-
-        [Fact]
-        public void ValidarIdTypeCodeMaiorQue1OuMenorQue0()
-        {
-            var guestTest2 = new GuestDto
-            {
-                IdTypeCode = 0
-            };
-            var valid2 = new GuestValidator();
-            var result2 = valid2.TestValidate(guestTest2);
-            result2.ShouldHaveValidationErrorFor(x => x.IdTypeCode);
-
             var guestTest = new GuestDto
             {
-                IdTypeCode = 3
+                IdTypeCode = type
+            };
+            var valid = new GuestValidator();
+            var result = valid.TestValidate(guestTest);
+            result.ShouldNotHaveValidationErrorFor(x => x.IdTypeCode);
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(3)]
+        public void ValidarIdTypeCodeMaiorQue1OuMenorQue0(int type)
+        {
+            var guestTest = new GuestDto
+            {
+                IdTypeCode = type
             };
             var valid = new GuestValidator();
             var result = valid.TestValidate(guestTest);

@@ -15,7 +15,7 @@ namespace Application.Room.Validators
         {
             RuleFor(x => x.Name).NotNull().WithMessage("O campo Name não pode estar nulo").NotEmpty().WithMessage("O campo Name não pode estar vazio");
             RuleFor(x => x.Level).NotNull().WithMessage("O campo Level não pode estar nulo").NotEmpty().WithMessage("O campo Level não pode estar vazio");
-            RuleFor(x => x.InMaintenance).Must(x => x == false || x == true).WithMessage("O campo InMaintenance só pode ser true ou false").NotNull().WithMessage("O campo InMaintenance não pode estar nulo");
+            RuleFor(x => x.InMaintenance).NotNull().When(x => x.InMaintenance == null).WithMessage("O campo InMaintenance não pode estar nulo");
             RuleFor(x => x.Value).NotNull().WithMessage("O campo Value não pode estar nulo").NotEmpty().WithMessage("O campo Value não pode estar vazio").GreaterThan(10).WithMessage("O campo Value não pode ser menos de 10");
             RuleFor(x => x.Currency).Custom((list, context) => {
                 if (list > 4 | list < 1)

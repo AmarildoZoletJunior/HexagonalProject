@@ -45,7 +45,7 @@ namespace Application.Room
 
                 return new RoomResponse
                 {
-                     ListMessages = lista,
+                    ListMessages = lista,
                     Success = false
                 };
             }
@@ -53,15 +53,15 @@ namespace Application.Room
             var roomMap = RoomDto.MapToEntity(room.Data);
             await roomMap.SaveAsync(_roomRepository);
             room.Data.Id = roomMap.Id;
-
            return new RoomResponse
             {
                 Data = room.Data,
                 Success = true
             };
+
         }
 
-        public async Task<RoomResponse> GetRoom(int id)
+        public async Task<RoomResponse> GetRoomById(int id)
         {
             var getRoom = await _roomRepository.GetRoom(id);
             if (getRoom != null)

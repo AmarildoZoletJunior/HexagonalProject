@@ -18,8 +18,10 @@ namespace AdaptersSQL.Room
         }
         public async Task<int> Create(Domain.Entities.Room room)
         {
+            Console.Write("Este é o id que chegou" + room.Id);
             _dataContext.Rooms.Add(room);
             await _dataContext.SaveChangesAsync();
+            Console.Write("Este é o id que saiu" + room.Id);
             return room.Id;
         }
 

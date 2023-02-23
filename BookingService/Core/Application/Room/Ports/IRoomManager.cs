@@ -13,6 +13,6 @@ namespace Application.Room.Ports
     public interface IRoomManager
     {
         Task<RoomResponse> CreateRoom(CreateRoomRequest guest);
-        public Task<RoomResponse> GetRoom(int id);
+        public Task<RoomResponse> GetRoomById(int id);
     }
 }

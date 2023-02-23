@@ -8,62 +8,32 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ApplicationTests.RoomTests.RoomValidators
 {
-    public class BookingStart
+    public class RoomCurrency
     {
-        [Fact]
-        public void ValidarCurrencyCorreto()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void ValidarCurrencyCorreto(int idCurrency)
         {
             var RoomTest = new RoomDto
             {
-                Currency = 1
+                Currency = idCurrency
             };
             var valid = new RoomValidator();
             var result = valid.TestValidate(RoomTest);
             result.ShouldNotHaveValidationErrorFor(x => x.Currency);
-
-            var RoomTest2 = new RoomDto
-            {
-                Currency = 2
-            };
-            var valid2 = new RoomValidator();
-            var result2 = valid2.TestValidate(RoomTest2);
-            result2.ShouldNotHaveValidationErrorFor(x => x.Currency);
-
-            var RoomTest3 = new RoomDto
-            {
-                Currency = 3
-            };
-            var valid3 = new RoomValidator();
-            var result3 = valid3.TestValidate(RoomTest3);
-            result3.ShouldNotHaveValidationErrorFor(x => x.Currency);
-
-            var RoomTest4 = new RoomDto
-            {
-                Currency = 4
-            };
-            var valid4 = new RoomValidator();
-            var result4 = valid4.TestValidate(RoomTest4);
-            result4.ShouldNotHaveValidationErrorFor(x => x.Currency);
         }
 
-        [Fact]
-        public void ValidarCurrencyAcimaDe4()
+        [Theory]
+        [InlineData(5)]
+        [InlineData(0)]
+        public void ValidarCurrencyAcimaOuAbaixo(int idCurrency)
         {
             var RoomTest = new RoomDto
             {
-                Level = 5
-            };
-            var valid = new RoomValidator();
-            var result = valid.TestValidate(RoomTest);
-            result.ShouldHaveValidationErrorFor(x => x.Currency);
-        }
-
-        [Fact]
-        public void ValidarCurrencyAbaixoDe1()
-        {
-            var RoomTest = new RoomDto
-            {
-                Level = 0
+                Currency = idCurrency
             };
             var valid = new RoomValidator();
             var result = valid.TestValidate(RoomTest);

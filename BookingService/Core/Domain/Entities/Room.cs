@@ -16,7 +16,7 @@ namespace Domain.Entities
         public int Level { get; set; }
         public Price PriceRoom { get; set; }
         public bool InMaintenance { get; set; }
-        public ICollection<Booking> Bookings { get; set; }
+        public ICollection<Booking>? Bookings { get; set; }
 
         public bool IsAvailable {
             get

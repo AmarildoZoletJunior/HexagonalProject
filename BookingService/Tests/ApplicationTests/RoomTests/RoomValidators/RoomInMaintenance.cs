@@ -10,25 +10,18 @@ namespace ApplicationTests.RoomTests.RoomValidators
 {
     public class RoomInMaintenance
     {
-        [Fact]
-        public void ValidarMaintenanceCorreto()
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void ValidarMaintenanceCorreto(bool decisao)
         {
             var RoomTest = new RoomDto
             {
-                InMaintenance = false
+                InMaintenance = decisao
             };
             var valid = new RoomValidator();
             var result = valid.TestValidate(RoomTest);
             result.ShouldNotHaveValidationErrorFor(x => x.InMaintenance);
-
-
-            var RoomTest2 = new RoomDto
-            {
-                InMaintenance = true
-            };
-            var valid2 = new RoomValidator();
-            var result2 = valid2.TestValidate(RoomTest2);
-            result2.ShouldNotHaveValidationErrorFor(x => x.InMaintenance);
         }
 
     }

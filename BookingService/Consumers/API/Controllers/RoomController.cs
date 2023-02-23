@@ -30,6 +30,7 @@ namespace API.Controllers
                 Data = room
             };
             var res = await _roomManager.CreateRoom(request);
+            Console.WriteLine(res.Data.Id);
             if (res.Success) return Ok(res.Data);
 
             return BadRequest(res.ListMessages);
@@ -39,7 +40,7 @@ namespace API.Controllers
 
         public async Task<IActionResult> GetRoom(int id)
         {
-            var request = await _roomManager.GetRoom(id);
+            var request = await _roomManager.GetRoomById(id);
             if (request.Success) return Ok(request.Data);
 
             return BadRequest(request.Message);
