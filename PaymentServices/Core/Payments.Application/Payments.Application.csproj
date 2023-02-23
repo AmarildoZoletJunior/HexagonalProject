@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\..\BookingService\Core\Application\Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MercadoPago\" />
+  </ItemGroup>
+
 </Project>

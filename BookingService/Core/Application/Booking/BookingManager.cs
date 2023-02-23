@@ -4,6 +4,8 @@ using Application.Booking.Request;
 using Application.Booking.Response;
 using Application.Booking.Validators;
 using Application.Errors;
+using Application.Payments.Request;
+using Application.Payments.Response;
 using Domain.Ports;
 using System;
 using System.Collections;
@@ -20,9 +22,12 @@ namespace Application.Booking
         private IBookingRepository bookRepository;
         private IGuestRepository guestRepository;
         private IRoomRepository roomRepository;
+        private IPaymentProcessorFactory _paymentProcessorFactory;
 
-        public BookingManager(IBookingRepository bookRepository, IGuestRepository guestRepository, IRoomRepository roomRepository)
+
+        public BookingManager(IPaymentProcessorFactory paymentPorcessorFactory, IBookingRepository bookRepository, IGuestRepository guestRepository, IRoomRepository roomRepository)
         {
+            this._paymentProcessorFactory = paymentProcessorFactory;
             this.bookRepository = bookRepository;
             this.guestRepository = guestRepository;
             this.roomRepository = roomRepository;
@@ -89,5 +94,21 @@ namespace Application.Booking
             throw new NotImplementedException();
         }
 
+
+        public Task<PaymentResponse> PayForBooking(PaymentRequestDto dto)
+        {
+            var paymentProcessor = _paymentProcessorFactory.GetPaymentProcessor(dto.SelectTypeProvider)
+             var response = await paymentProcessor.CapturePayment(dto.PaymentIntention);
+
+            if (response.Success)
+            {
+                return new PaymentResponse
+                {
+                    Success = true,
+                      Data = response.Data
+                }
+            }
+            return response
+        }
     }
 }

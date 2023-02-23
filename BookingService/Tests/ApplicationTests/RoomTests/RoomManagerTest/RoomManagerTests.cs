@@ -49,6 +49,7 @@ namespace ApplicationTests.GuestTests.GuestManagerTest
             };
 
             var response = await manage.CreateRoom(room);
+
             Assert.True(response.Success);
         }
 

@@ -46,7 +46,6 @@ namespace Domain.Entities
         public async Task SaveAsync(IBookingRepository repository)
         {
             this.Id = await repository.Create(this);
-            
         }
 
         public async Task<bool> ValidateGuest(IGuestRepository repository)
