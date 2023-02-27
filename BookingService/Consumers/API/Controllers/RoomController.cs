@@ -33,7 +33,7 @@ namespace API.Controllers
             Console.WriteLine(res.Data.Id);
             if (res.Success) return Ok(res.Data);
 
-            return BadRequest(res.ListMessages);
+            return BadRequest(res);
         }
 
         [HttpGet("{id:int}")]

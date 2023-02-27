@@ -105,7 +105,7 @@ namespace ApplicationTests.RoomTests.RoomManagerTest
             var response = await manager.CreateGuest(guest);
 
             Assert.False(response.Success);
-            Assert.Contains(typeNameError, response.ListMessages.Select(x => x.ErrorType));
+            Assert.Contains(typeNameError, response.ListErrors.Select(x => x.ErrorType));
         }
 
 
@@ -137,7 +137,7 @@ namespace ApplicationTests.RoomTests.RoomManagerTest
             var response = await manager.CreateGuest(guest);
 
             Assert.False(response.Success);
-            Assert.Contains(typeNameError, response.ListMessages.Select(x => x.ErrorType));
+            Assert.Contains(typeNameError, response.ListErrors.Select(x => x.ErrorType));
         }
 
 
@@ -168,7 +168,7 @@ namespace ApplicationTests.RoomTests.RoomManagerTest
             var response = await manager.CreateGuest(guest);
 
             Assert.False(response.Success);
-            Assert.Contains(typeNameError, response.ListMessages.Select(x => x.ErrorType));
+            Assert.Contains(typeNameError, response.ListErrors.Select(x => x.ErrorType));
         }
     }
 }

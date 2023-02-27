@@ -28,24 +28,13 @@ namespace Application.Guests
             var guestDto = guestRequest.Data;
             var validator = new GuestValidator();
             var resultado = validator.Validate(guestDto);
-
             if (!resultado.IsValid)
             {
-
-                var lista = new List<ErrorResponse>();
-                foreach (var erro in resultado.Errors)
-                {
-                    lista.Add(new ErrorResponse
-                    {
-                        ErrorMessages = erro.ErrorMessage,
-                        ErrorType = erro.PropertyName
-                    });
-                }
-
                 return new GuestResponse
                 {
+                     Message = "Ocorreu erro de validação.",
                     Success = false,
-                    ListMessages = lista
+                     ListErrors = resultado.Errors.Select(x => new { x.ErrorMessage , x.PropertyName})
                 };
             }
 

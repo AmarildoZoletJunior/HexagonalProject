@@ -47,22 +47,34 @@ namespace Domain.Entities
         {
             this.Id = await repository.Create(this);
         }
-
-        public async Task<bool> ValidateGuest(IGuestRepository repository)
+        public async Task<Room> ValidateRoom(IRoomRepository repository,int idRoom)
         {
-            this.Guest = await repository.GetGuest(this.Guest.Id);    
-            if (this.Guest != null) return true;
-            return false;
+            var getRoom = await repository.GetRoom(idRoom);
+            return getRoom;
         }
-        public async Task<string> ValidateRoom(IRoomRepository repository)
+
+        public async Task<Guest> ValidateGuest(IGuestRepository repository, int idGuest)
         {
-            this.Room = await repository.GetRoom(this.Room.Id);
+            var getGuest = await repository.GetGuest(idGuest);
+            return getGuest;
+        }
+        public async Task<List<string>> Validate(IRoomRepository roomRepository,int idRoom, IGuestRepository guestRepository, int idGuest)
+        {
+            List<string> lista = new List<string>();
+            var guestValidate = await ValidateGuest(guestRepository,idGuest);
+            if(guestValidate == null)  lista.Add("Este guest é nulo");
 
-            if (this.Room == null) return "Este Room não existe";
+            var roomValidate = await ValidateRoom(roomRepository, idRoom);
+            if (roomValidate == null)
+            {
+                lista.Add("Este Room é nulo");
+            }
+            else
+            {
+               if (!roomValidate.IsAvailable) lista.Add("Este room ja está sendo negociado.");
+            }
 
-            if (!this.Room.IsAvailable) return "Este Room ja esta sendo negociado";
- 
-            return "";
+            return lista;
         }
     }
 }

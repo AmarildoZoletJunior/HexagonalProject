@@ -26,7 +26,7 @@ namespace API.Controllers
 
         [HttpPost]
 
-        public async Task<ActionResult<GuestDto>> PostTeste(GuestDto guest)
+        public async Task<ActionResult<GuestDto>> Post(GuestDto guest)
         {
             var request = new CreateGuestRequest
             {
@@ -34,8 +34,9 @@ namespace API.Controllers
             };
             var res = await _ports.CreateGuest(request);
             if (res.Success) return Ok(res.Data);
+  
 
-            return BadRequest(res.ListMessages);
+            return BadRequest(res);
         }
 
         [HttpGet("{id:int}")]

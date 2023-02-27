@@ -27,9 +27,9 @@ namespace API.Controllers
                 Data = booking
             };
             var response = await _bookingManager.CreateBooking(request);
-            if (response.Success) { return response.Data; };
+            if (response.Success) return Ok(response);
 
-            return BadRequest(response.ListMessages);
+            return BadRequest(response);
         }
 
         [HttpPost]

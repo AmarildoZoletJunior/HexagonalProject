@@ -32,21 +32,11 @@ namespace Application.Room
 
             if (!resultado.IsValid)
             {
-
-                var lista = new List<ErrorResponse>();
-                foreach (var erro in resultado.Errors)
-                {
-                    lista.Add(new ErrorResponse
-                    {
-                        ErrorMessages = erro.ErrorMessage,
-                        ErrorType = erro.PropertyName
-                    });
-                }
-
                 return new RoomResponse
                 {
-                    ListMessages = lista,
-                    Success = false
+                    Message = "Ocorreu um erro de validação.",
+                    Success = false,
+                    ListErrors = resultado.Errors.Select(x => new { x.ErrorMessage, x.PropertyName })
                 };
             }
 

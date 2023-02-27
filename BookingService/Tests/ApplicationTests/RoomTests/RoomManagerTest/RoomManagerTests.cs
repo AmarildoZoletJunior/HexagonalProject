@@ -143,7 +143,7 @@ namespace ApplicationTests.GuestTests.GuestManagerTest
 
             var response = await manage.CreateRoom(room);
             Assert.False(response.Success);
-            Assert.Contains(propriedadeError, response.ListMessages.Select(x => x.ErrorType));
+            Assert.Contains(propriedadeError, response.ListErrors.Select(x => x.ErrorType));
         }
 
 
@@ -173,7 +173,7 @@ namespace ApplicationTests.GuestTests.GuestManagerTest
 
             var response = await manage.CreateRoom(room);
             Assert.False(response.Success);
-            Assert.Contains(propriedadeError, response.ListMessages.Select(x => x.ErrorType));
+            Assert.Contains(propriedadeError, response.ListErrors.Select(x => x.ErrorType));
         }
 
 
@@ -200,7 +200,7 @@ namespace ApplicationTests.GuestTests.GuestManagerTest
 
             var response = await manage.CreateRoom(room);
             Assert.False(response.Success);
-            Assert.Contains(propriedadeError, response.ListMessages.Select(x => x.ErrorType));
+            Assert.Contains(propriedadeError, response.ListErrors.Select(x => x.ErrorType));
         }
 
     }

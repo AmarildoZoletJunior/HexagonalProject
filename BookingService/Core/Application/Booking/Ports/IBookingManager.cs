@@ -14,7 +14,6 @@ namespace Application.Booking.Ports
     public interface IBookingManager
     {
         Task<BookingResponse> CreateBooking(CreateBookingRequest booking);
-        Task<BookingDto> GetBooking(int id);
         Task<ResponsePayment> PayForBooking(PaymentRequestDto dto);
     }
 }

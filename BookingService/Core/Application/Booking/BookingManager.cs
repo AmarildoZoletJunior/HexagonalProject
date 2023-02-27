@@ -8,6 +8,7 @@ using Application.Payment.DTOs;
 using Application.Payment.PaymentResponse;
 using Application.Payment.Ports;
 using Domain.Ports;
+using FluentValidation.Results;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,65 +36,34 @@ namespace Application.Booking
 
         public async Task<BookingResponse> CreateBooking(CreateBookingRequest booking)
         {
-
-            var lista = new List<ErrorResponse>();
             var bookingMap = BookingDto.MapToEntity(booking.Data);
-
-            var resultValidateGuest = await bookingMap.ValidateGuest(guestRepository);
-            if (!resultValidateGuest)
-            {
-                lista.Add(new ErrorResponse { ErrorMessages = "O Guest passado não se encontra no banco de dados", ErrorType = "NotFoundGuest" });
-            }
-
-
-            var resultValidateRoom = await bookingMap.ValidateRoom(roomRepository);
-            if (resultValidateRoom != "")
-            {
-                lista.Add(new ErrorResponse { ErrorMessages = resultValidateRoom, ErrorType = "RoomError" });
-            }
-
             BookingValidator validator = new BookingValidator();
             var validResponse = validator.Validate(booking.Data);
 
-            if (!validResponse.IsValid)
+            var resultado = await bookingMap.Validate(roomRepository, booking.Data.RoomId, guestRepository, booking.Data.GuestId);
+            if (resultado.Count > 0)
             {
-                foreach (var erro in validResponse.Errors)
-                {
-                    lista.Add(new ErrorResponse
-                    {
-                        ErrorMessages = erro.ErrorMessage,
-                        ErrorType = erro.PropertyName
-                    });
-                };
-            }
+                resultado.ForEach(x => validResponse.Errors.Add(new ValidationFailure { ErrorMessage = $"{x}", PropertyName = "Error Room or Guest"}));
+            };
 
-
-            if (lista.Any())
+            if (!validResponse.IsValid || resultado.Count > 0)
             {
-                return new Application.Booking.Response.BookingResponse
+                return new BookingResponse
                 {
+                     Message = "Ocorreram erros de validações",
                     Success = false,
-                    ListMessages = lista
+                    ListErrors = validResponse.Errors.Select(x => new { x.PropertyName, x.ErrorMessage })
+                     };
                 };
-            }
-
 
             await bookingMap.SaveAsync(bookRepository);
 
-            return new Application.Booking.Response.BookingResponse
+            return new BookingResponse
             {
                 Success = true,
                 Data = BookingDto.MapToDto(bookingMap)
             };
-
-
         }
-
-        public Task<BookingDto> GetBooking(int id)
-        {
-            throw new NotImplementedException();
-        }
-
 
         public async Task<ResponsePayment> PayForBooking(PaymentRequestDto dto)
         {
