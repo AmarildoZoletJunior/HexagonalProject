@@ -89,3 +89,5 @@ C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\A
 C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\API\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\API\bin\Debug\net6.0\Payments.Application.dll
+C:\Users\Amarildo\Desktop\NetProject\HexagonalProject\BookingService\Consumers\API\bin\Debug\net6.0\Payments.Application.pdb

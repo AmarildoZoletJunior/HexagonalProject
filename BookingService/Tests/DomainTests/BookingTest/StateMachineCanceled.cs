@@ -1,4 +1,3 @@
-
 using Domain.Entities;
 
 namespace DomainTests.BookingTest

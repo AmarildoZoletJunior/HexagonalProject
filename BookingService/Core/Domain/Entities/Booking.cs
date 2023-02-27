@@ -12,11 +12,6 @@ namespace Domain.Entities
 {
     public class Booking
     {
-        public Booking()
-        {
-            this.Status = Status.Created;
-            this.PlacedAt = DateTime.UtcNow;
-        }
         public int Id { get; set; }
 
         public Room Room { get; set; }
@@ -41,6 +36,11 @@ namespace Domain.Entities
                 (Status.Canceled, Action.Reopen) => Status.Created,
                 _ => this.Status
             };
+        }
+        public Booking()
+        {
+            this.Status = Status.Created;
+            this.PlacedAt = DateTime.UtcNow;
         }
 
         public async Task SaveAsync(IBookingRepository repository)

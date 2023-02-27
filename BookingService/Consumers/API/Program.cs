@@ -10,6 +10,7 @@ using Application.Guests;
 using Application.Guests.DTOs;
 using Application.Guests.Ports;
 using Application.Guests.Validators;
+using Application.Payment.Ports;
 using Application.Room;
 using Application.Room.DTOs;
 using Application.Room.Ports;
@@ -18,6 +19,8 @@ using Domain.Ports;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
+using Payments.Application;
+using Payments.Application.MercadoPago;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,11 +41,14 @@ builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 
 builder.Services.AddScoped<IBookingManager, BookingManager>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<IPaymentProcessor, MercadoPagoAdapter>();
+builder.Services.AddScoped<IPaymentProcessorFactory, PaymentProcessorFactory>();
 
 #region IOCValidators
 builder.Services.AddTransient<IValidator<GuestDto>, GuestValidator>();
 builder.Services.AddTransient<IValidator<RoomDto>, RoomValidator>();
 builder.Services.AddTransient<IValidator<BookingDto>, BookingValidator>();
+
 #endregion
 
 #endregion

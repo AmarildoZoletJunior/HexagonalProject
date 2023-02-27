@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\PaymentServices\Core\Payments.Application\Payments.Application.csproj" />
     <ProjectReference Include="..\..\Adapters\AdaptersSQL\AdaptersSQL.csproj" />
     <ProjectReference Include="..\..\Core\Application\Application.csproj" />
   </ItemGroup>

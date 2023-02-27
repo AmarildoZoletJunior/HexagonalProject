@@ -33,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{12232E29-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{364DFE68-2B90-4707-B3A7-499F597E04A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Application", "PaymentServices\Core\Payments.Application\Payments.Application.csproj", "{2F7157F7-F635-4E19-B240-5F15FF2CCCD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Payments.Application", "PaymentServices\Core\Payments.Application\Payments.Application.csproj", "{2F7157F7-F635-4E19-B240-5F15FF2CCCD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
