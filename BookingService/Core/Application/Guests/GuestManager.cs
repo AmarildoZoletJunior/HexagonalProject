@@ -1,4 +1,4 @@
-﻿
+﻿using Application.Errors;
 using Application.Guests.DTOs;
 using Application.Guests.Ports;
 using Application.Guests.Requests;

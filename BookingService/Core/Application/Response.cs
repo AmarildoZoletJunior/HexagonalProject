@@ -1,4 +1,4 @@
-﻿
+﻿using Application.Errors;
 
 namespace Application
 {

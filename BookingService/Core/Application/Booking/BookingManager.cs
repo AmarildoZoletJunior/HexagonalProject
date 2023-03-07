@@ -3,6 +3,7 @@ using Application.Booking.Ports;
 using Application.Booking.Request;
 using Application.Booking.Response;
 using Application.Booking.Validators;
+using Application.Errors;
 using Application.Payment.DTOs;
 using Application.Payment.PaymentResponse;
 using Application.Payment.Ports;
