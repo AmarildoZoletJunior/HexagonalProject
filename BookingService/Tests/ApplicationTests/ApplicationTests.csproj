@@ -28,4 +28,9 @@
     <ProjectReference Include="..\..\Core\Application\Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GuestTests\GuestManagerTest\" />
+    <Folder Include="RoomTests\RoomManagerTest\" />
+  </ItemGroup>
+
 </Project>

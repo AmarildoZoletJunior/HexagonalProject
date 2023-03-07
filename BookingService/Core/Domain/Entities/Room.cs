@@ -40,7 +40,7 @@ namespace Domain.Entities
                 };
 
                 return this.Bookings.Where(
-                    x => x.Room.Id == this.Id && NotAvailableStatus.Contains(x.CurrentStatus)).Count() > 0;
+                    x => x.RoomId == this.Id && NotAvailableStatus.Contains(x.CurrentStatus)).Count() > 0;
             }
         }
 

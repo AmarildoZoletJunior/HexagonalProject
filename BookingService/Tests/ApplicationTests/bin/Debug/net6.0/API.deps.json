@@ -14,6 +14,7 @@
           "FluentValidation.AspNetCore": "11.2.2",
           "FluentValidation.DependencyInjectionExtensions": "11.5.0",
           "Microsoft.EntityFrameworkCore.Design": "7.0.2",
+          "Payments.Application": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -828,6 +829,14 @@
         "runtime": {
           "Domain.dll": {}
         }
+      },
+      "Payments.Application/1.0.0": {
+        "dependencies": {
+          "Application": "1.0.0"
+        },
+        "runtime": {
+          "Payments.Application.dll": {}
+        }
       }
     }
   },
@@ -1415,6 +1424,11 @@
       "sha512": ""
     },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Payments.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

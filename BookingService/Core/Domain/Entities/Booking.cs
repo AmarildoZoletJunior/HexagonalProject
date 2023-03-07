@@ -13,9 +13,8 @@ namespace Domain.Entities
     public class Booking
     {
         public int Id { get; set; }
-
-        public Room Room { get; set; }
-        public Guest Guest { get; set; }
+        public int RoomId { get; set; }
+        public int GuestId { get; set; }
         public DateTime PlacedAt { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
@@ -67,7 +66,7 @@ namespace Domain.Entities
             var roomValidate = await ValidateRoom(roomRepository, idRoom);
             if (roomValidate == null)
             {
-                lista.Add("Este Room é nulo");
+                lista.Add("Este RoomId é nulo");
             }
             else
             {

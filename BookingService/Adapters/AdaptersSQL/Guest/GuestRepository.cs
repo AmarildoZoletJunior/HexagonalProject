@@ -25,7 +25,7 @@ namespace AdaptersSQL.Guest
 
         public async Task<Domain.Entities.Guest> GetGuest(int id)
         {
-            return await _dataContext.Guests.FirstOrDefaultAsync(x => x.Id == id);
+            return await _dataContext.Guests.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

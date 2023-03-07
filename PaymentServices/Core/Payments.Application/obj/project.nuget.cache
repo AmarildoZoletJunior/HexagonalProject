@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qD84+jHV/IRrIMPRKi1jJ8Ryuz66bz25gVwyveO6VLQzEC6QKU1H7aT9HpLqRV1Zpv0WyeYHWeSnUNHkvGJAXw==",
+  "dgSpecHash": "rxcSHwrmEsZVaKC0Sfivef4rc5d0Hx7trTQ4A84RdmsXWa1njEMHgjPOomrhIfiUGlzUii8/kR81R7um6wZRmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\PaymentServices\\Core\\Payments.Application\\Payments.Application.csproj",
+  "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\TESTE\\HexagonalProject\\PaymentServices\\Core\\Payments.Application\\Payments.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Amarildo\\.nuget\\packages\\fluentvalidation\\11.5.0\\fluentvalidation.11.5.0.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

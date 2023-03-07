@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JN1Aua6Ww0aPzm7G73qlMvA98kpTowcUzcnl1+tMdHNX+zS5VUlxrCHD+wB4SSwuXGEtAoM/QDjZh7ch+pwrQg==",
+  "dgSpecHash": "yxLegKajtI7RH8Y07AVRULV7Inbe/I8j0bRR4aRW1m6bSduD3hErv2ym0XwJbmGzyScXW/ab9sTNPNVaHdz3jQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Tests\\AdapterTests\\AdapterTests.csproj",
+  "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\TESTE\\HexagonalProject\\BookingService\\Tests\\AdapterTests\\AdapterTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Amarildo\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",

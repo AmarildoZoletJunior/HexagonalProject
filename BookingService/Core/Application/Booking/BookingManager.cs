@@ -7,6 +7,7 @@ using Application.Errors;
 using Application.Payment.DTOs;
 using Application.Payment.PaymentResponse;
 using Application.Payment.Ports;
+using Domain.Entities;
 using Domain.Ports;
 using FluentValidation.Results;
 using System;
@@ -36,14 +37,22 @@ namespace Application.Booking
 
         public async Task<BookingResponse> CreateBooking(CreateBookingRequest booking)
         {
-            var bookingMap = BookingDto.MapToEntity(booking.Data);
+            var bookingMap = new Domain.Entities.Booking
+            {
+                Id = booking.Data.Id,
+                End = booking.Data.End,
+                GuestId = booking.Data.GuestId ,
+                RoomId = booking.Data.RoomId ,
+                Start = booking.Data.Start,
+            };
+
             BookingValidator validator = new BookingValidator();
             var validResponse = validator.Validate(booking.Data);
 
-            var resultado = await bookingMap.Validate(roomRepository, booking.Data.RoomId, guestRepository, booking.Data.GuestId);
+            var resultado = await bookingMap.Validate(roomRepository, bookingMap.RoomId, guestRepository, bookingMap.GuestId); ;
             if (resultado.Count > 0)
             {
-                resultado.ForEach(x => validResponse.Errors.Add(new ValidationFailure { ErrorMessage = $"{x}", PropertyName = "Error Room or Guest"}));
+                resultado.ForEach(x => validResponse.Errors.Add(new ValidationFailure { ErrorMessage = $"{x}", PropertyName = "Error RoomId or GuestId"}));
             };
 
             if (!validResponse.IsValid || resultado.Count > 0)

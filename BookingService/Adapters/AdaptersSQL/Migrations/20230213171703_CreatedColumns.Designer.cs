@@ -47,7 +47,7 @@ namespace AdaptersSQL.Migrations
                     b.ToTable("Bookings");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Guest", b =>
+            modelBuilder.Entity("Domain.Entities.GuestId", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -72,7 +72,7 @@ namespace AdaptersSQL.Migrations
                     b.ToTable("Guests");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Room", b =>
+            modelBuilder.Entity("Domain.Entities.RoomId", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -54,7 +54,7 @@ namespace AdaptersSQL.Migrations
                     b.ToTable("Bookings");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Guest", b =>
+            modelBuilder.Entity("Domain.Entities.GuestId", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -79,7 +79,7 @@ namespace AdaptersSQL.Migrations
                     b.ToTable("Guests");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Room", b =>
+            modelBuilder.Entity("Domain.Entities.RoomId", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,24 +104,24 @@ namespace AdaptersSQL.Migrations
 
             modelBuilder.Entity("Domain.Entities.Booking", b =>
                 {
-                    b.HasOne("Domain.Entities.Guest", "Guest")
+                    b.HasOne("Domain.Entities.GuestId", "GuestId")
                         .WithMany()
                         .HasForeignKey("GuestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.Room", "Room")
+                    b.HasOne("Domain.Entities.RoomId", "RoomId")
                         .WithMany("Bookings")
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Guest");
+                    b.Navigation("GuestId");
 
-                    b.Navigation("Room");
+                    b.Navigation("RoomId");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Guest", b =>
+            modelBuilder.Entity("Domain.Entities.GuestId", b =>
                 {
                     b.OwnsOne("Domain.ValueObjects.PersonId", "DocumentId", b1 =>
                         {
@@ -147,7 +147,7 @@ namespace AdaptersSQL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.Entities.Room", b =>
+            modelBuilder.Entity("Domain.Entities.RoomId", b =>
                 {
                     b.OwnsOne("Domain.ValueObjects.Price", "PriceRoom", b1 =>
                         {
@@ -172,7 +172,7 @@ namespace AdaptersSQL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.Entities.Room", b =>
+            modelBuilder.Entity("Domain.Entities.RoomId", b =>
                 {
                     b.Navigation("Bookings");
                 });

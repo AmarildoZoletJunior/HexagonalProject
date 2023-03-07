@@ -32,8 +32,8 @@ namespace Application.Booking.DTOs
             {
                 Id = booking.Id,
                 End = booking.End,
-                Guest = new Domain.Entities.Guest { Id = booking.GuestId},
-                Room = new Domain.Entities.Room {  Id = booking.RoomId },
+                GuestId = booking.GuestId,
+                RoomId = booking.RoomId ,
                 Start = booking.Start
             };
         }
@@ -44,8 +44,8 @@ namespace Application.Booking.DTOs
             {
                 Id = booking.Id,
                 End = booking.End,
-                GuestId = booking.Guest.Id,
-                RoomId = booking.Room.Id,
+                GuestId = booking.GuestId,
+                RoomId = booking.RoomId,
                 Start = booking.Start,
                  PlacedAt = booking.PlacedAt,
                  Status = booking.CurrentStatus

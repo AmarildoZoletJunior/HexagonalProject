@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OqF+jh5MPMN8u2I2dq23cQDoHH4fvuibXr7bXeI7SZWihdGojn+dKcH+yc207+TbVczpKJl6oGkV9NRzoAICbw==",
+  "dgSpecHash": "JH6dD9Zy84AkWfelbMPGVo01VV+nlteHnbu1QD71ce/2Od+ayOdltv1NUCsrqIQLGRmvZbpO9TC+P6Duu4izPA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\HexagonalProject\\BookingService\\Consumers\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Amarildo\\Desktop\\NetProject\\TESTE\\HexagonalProject\\BookingService\\Consumers\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Amarildo\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Amarildo\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

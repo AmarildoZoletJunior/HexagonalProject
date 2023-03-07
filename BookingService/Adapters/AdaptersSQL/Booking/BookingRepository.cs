@@ -1,4 +1,5 @@
-﻿using Domain.Ports;
+﻿using Domain.Enums;
+using Domain.Ports;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace AdaptersSQL.Booking
         public async Task<int> Create(Domain.Entities.Booking booking)
         {
             _dataContext.Bookings.Add(booking);
-            await _dataContext.SaveChangesAsync();
+            _dataContext.SaveChanges();
             return booking.Id;
         }
 
