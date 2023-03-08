@@ -1,4 +1,5 @@
-﻿using Application.Errors;
+﻿
+using Application.Error;
 using Application.Guests.DTOs;
 using Application.Guests.Ports;
 using Application.Guests.Requests;
@@ -34,7 +35,7 @@ namespace Application.Guests
                 {
                      Message = "Ocorreu erro de validação.",
                     Success = false,
-                     ListErrors = resultado.Errors.Select(x => new { x.ErrorMessage , x.PropertyName})
+                     ListErrors = resultado.Errors.Select(x => new ErrorResponse {  ErrorMessage = x.ErrorMessage ,  PropertyName = x.PropertyName})
                 };
             }
 

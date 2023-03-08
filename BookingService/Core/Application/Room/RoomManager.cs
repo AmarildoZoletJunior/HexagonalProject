@@ -1,4 +1,5 @@
-﻿using Application.Errors;
+﻿
+using Application.Error;
 using Application.Guests.DTOs;
 using Application.Guests.Responses;
 using Application.Guests.Validators;
@@ -36,7 +37,7 @@ namespace Application.Room
                 {
                     Message = "Ocorreu um erro de validação.",
                     Success = false,
-                    ListErrors = resultado.Errors.Select(x => new { x.ErrorMessage, x.PropertyName })
+                    ListErrors = resultado.Errors.Select(x => new ErrorResponse{  ErrorMessage = x.ErrorMessage, PropertyName =  x.PropertyName })
                 };
             }
 

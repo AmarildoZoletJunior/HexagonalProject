@@ -3,7 +3,7 @@ using Application.Booking.Ports;
 using Application.Booking.Request;
 using Application.Booking.Response;
 using Application.Booking.Validators;
-using Application.Errors;
+using Application.Error;
 using Application.Payment.DTOs;
 using Application.Payment.PaymentResponse;
 using Application.Payment.Ports;
@@ -61,7 +61,7 @@ namespace Application.Booking
                 {
                      Message = "Ocorreram erros de validações",
                     Success = false,
-                    ListErrors = validResponse.Errors.Select(x => new { x.PropertyName, x.ErrorMessage })
+                    ListErrors = validResponse.Errors.Select(x => new ErrorResponse{ PropertyName = x.PropertyName,  ErrorMessage =  x.ErrorMessage })
                      };
                 };
 

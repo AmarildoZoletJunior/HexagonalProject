@@ -1,4 +1,5 @@
-﻿using Application.Errors;
+﻿
+using Application.Error;
 
 namespace Application
 {
@@ -6,6 +7,6 @@ namespace Application
     {
         public bool Success { get; set; }
         public string Message { get; set; }
-        public Object ListErrors { get; set; }
+        public IEnumerable<ErrorResponse> ListErrors { get; set; }
     }
 }
